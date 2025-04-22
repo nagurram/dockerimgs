@@ -1,13 +1,14 @@
+ # filepath: /E:/githubcode/Repos/dockerimgs/Dockerfile
 # Use the official NGINX image as the base image
 FROM nginx:latest
 
-# Copy custom configuration file to the NGINX configuration directory
-# Uncomment and replace 'custom-nginx.conf' with your file if needed
-# COPY custom-nginx.conf /etc/nginx/nginx.conf
+# Copy the custom NGINX configuration file
+COPY nginx.conf /etc/nginx/nginx.conf
 
-# Copy static website files to the default NGINX HTML directory
-# Uncomment and replace 'your-static-files/' with your directory if needed
-# COPY your-static-files/ /usr/share/nginx/html/
+# Copy the HTML files for each app
+COPY SiteMain.html /usr/share/nginx/html/sitemain/
+COPY Version1.html /usr/share/nginx/html/version1/
+COPY Version2.html /usr/share/nginx/html/version2/
 
 # Expose port 80 for HTTP traffic
 EXPOSE 80
