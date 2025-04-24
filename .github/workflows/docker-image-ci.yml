@@ -27,8 +27,8 @@ jobs:
       # Step 3: Build the Docker image
       - name: Build Docker image
         run: |
-          echo "ls -la"
-          echo "pwd"
+          ls -la
+          pwd
           docker build -t ${{ secrets.DOCKERHUB_USER }}/multi-app-nginx:latest -f dockerimgs/Dockerfile .
 
       # Step 4: Push the Docker image to Docker Hub
