@@ -26,6 +26,6 @@
 
 **Test the routes:**
 
-http://localhost/sitemain 
+http://localhost/sitemain  
 http://localhost/version1  
 http://localhost/version2
