@@ -3,10 +3,10 @@ name: Build and Publish Docker Image
 on:
   push:
     branches:
-      - development  # Trigger the workflow on pushes to the 'main' branch
+      - development # Trigger the workflow on pushes to the 'main' branch
   pull_request:
     branches:
-      - development  # Trigger the workflow on pull requests to the 'main' branch
+      - development # Trigger the workflow on pull requests to the 'main' branch
 
 jobs:
   build-and-push:
@@ -21,14 +21,12 @@ jobs:
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.DOCKERHUB_USER }}  # Docker Hub username stored in GitHub Secrets
-          password: ${{ secrets.DOCKERHUB_USERKEY }}  # Docker Hub password stored in GitHub Secrets
+          username: ${{ secrets.DOCKERHUB_USER }} # Docker Hub username stored in GitHub Secrets
+          password: ${{ secrets.DOCKERHUB_USERKEY }} # Docker Hub password stored in GitHub Secrets
 
       # Step 3: Build the Docker image
       - name: Build Docker image
         run: |
-          ls -la
-          pwd
           docker build -t ${{ secrets.DOCKERHUB_USER }}/multi-app-nginx:latest -f Dockerfile .
 
       # Step 4: Push the Docker image to Docker Hub
