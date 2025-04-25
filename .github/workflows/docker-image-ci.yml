@@ -38,3 +38,10 @@ jobs:
       - name: Save Docker image
         run: |
           docker save ${{ secrets.DOCKERHUB_USER }}/multi-app-nginx:latest -o multi-app-nginx.tar
+
+      # Step 6: Upload the .tar file as an artifact
+      - name: Upload Docker image artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: multi-app-nginx-image
+          path: multi-app-nginx.tar
