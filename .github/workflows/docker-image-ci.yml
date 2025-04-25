@@ -1,12 +1,12 @@
-name: Build and Publish Docker Image
+name: Build, Publish, and Save Docker Image
 
 on:
   push:
     branches:
-      - development # Trigger the workflow on pushes to the 'main' branch
+      - development # Trigger the workflow on pushes to the 'development' branch
   pull_request:
     branches:
-      - development # Trigger the workflow on pull requests to the 'main' branch
+      - development # Trigger the workflow on pull requests to the 'development' branch
 
 jobs:
   build-and-push:
@@ -33,3 +33,15 @@ jobs:
       - name: Push Docker image
         run: |
           docker push ${{ secrets.DOCKERHUB_USER }}/multi-app-nginx:latest
+
+      # Step 5: Save Docker image as a .tar file
+      - name: Save Docker image
+        run: |
+          docker save ${{ secrets.DOCKERHUB_USER }}/multi-app-nginx:latest -o multi-app-nginx.tar
+
+      # Step 6: Upload the .tar file as an artifact
+      - name: Upload Docker image artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: multi-app-nginx-image
+          path: multi-app-nginx.tar
