@@ -16,24 +16,22 @@
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/nagurram/dockerimgs.git
-   cd dockerimgs
+   cd dockerimgs   
 
-  **Docker Commands:**  
-
+ 2. **Docker Commands**:
+   ```bash
    docker build -t multi-app-nginx .    
    docker run -d -p 80:80 multi-app-nginx
+ ```
+3.**Pulling docker image from dockerhub**
+ ```bash
+  docker pull nagurram/multi-app-nginx:latest  
+  docker run -d -p 80:80 nagurram/multi-app-nginx:latest
+ ```
 
-
-****Pulling docker image from dockerhub****
-
-docker pull nagurram/multi-app-nginx:latest  
-docker run -d -p 80:80 nagurram/multi-app-nginx:latest
-
-
-
-
-**Test the routes:**
-
-http://localhost/sitemain  
-http://localhost/version1  
-http://localhost/version2
+4.**Test the routes:**
+```bash
+  http://localhost/sitemain  
+  http://localhost/version1  
+  http://localhost/version2
+ ```
