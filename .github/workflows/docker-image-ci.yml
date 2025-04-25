@@ -29,7 +29,7 @@ jobs:
         run: |
           ls -la
           pwd
-          docker build -t ${{ secrets.DOCKERHUB_USER }}/multi-app-nginx:latest -f dockerimgs/Dockerfile .
+          docker build -t ${{ secrets.DOCKERHUB_USER }}/multi-app-nginx:latest -f Dockerfile .
 
       # Step 4: Push the Docker image to Docker Hub
       - name: Push Docker image
