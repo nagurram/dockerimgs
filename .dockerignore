@@ -22,5 +22,5 @@ Dockerfile
 Thumbs.db
 
 # Ignore build directories
-dist/
-build/
+#dist/
+#build/
