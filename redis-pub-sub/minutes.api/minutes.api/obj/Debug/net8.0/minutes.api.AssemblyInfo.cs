@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("minutes.api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b10c906f65e5a96730455c1f2ffd6caa0518444")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a350cd47c82fa5f60699b9d51c9f94905591db5f")]
 [assembly: System.Reflection.AssemblyProductAttribute("minutes.api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("minutes.api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
